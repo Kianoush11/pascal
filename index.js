@@ -94,7 +94,7 @@ bot.on("ready", () => {
   setInterval(() => {
     targetGuild = bot.guilds.get('813726879860391956')
     if(targetGuild) {
-        bot.user.setPresence({ game: { name: targetGuild.memberCount + 'Members', type: 'WATCHING' }, status: 'online'  })
+        bot.user.setPresence({ game: { name: targetGuild.memberCount + ' Members', type: 'WATCHING' }, status: 'online'  })
               .then(console.log)
               .catch(console.error);
     }
