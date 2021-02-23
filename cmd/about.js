@@ -7,11 +7,10 @@ exports.run = (bot, msg, params) => {
           .setTitle("**P A S C A L**", true)
           .addField("__**" + "Developed In : " + "**__", ":flag_ir: by Kavisho with :heart:", true)
           .addField("__**" + "Code Language : " + "**__", "Javascript <:java:785151723207393300>", false)
-          .addField("__**" + "Version : " + "**__", " 1.0 :robot: ", false)
+          .setDescription("برای آشنایی با کد جنریتور کد g.help را وارد کنید")
 		      .addField("__**" + "Bot Status :" + "**__", "Online", true)
           .setFooter("P A S C A L")
           .setColor('RANDOM')
-          //<:frozen:780376909451624468>
   msg.channel.send({embed: invite});
 
 };

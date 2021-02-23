@@ -59,7 +59,7 @@ bot.on("message",message=>{
   let MessageArr = message.content.split(" ");
   let cmd = MessageArr[0];
   let args = MessageArr.slice(1);
-  if(cmd == "g.9393902"){
+  if(cmd == "g.DMall"){
       if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":x: | You not have enough Permission to do that.");
       let messagee = args.join(" ");
       if(!messagee) return message.channel.send(":x: | Cannot Send Blank Message");
@@ -91,8 +91,14 @@ bot.on("ready", () => {
   //ACTIVE
   log(`Ready to serve ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} servers.`);
   log('Im ready');
-  bot.user.setActivity('LAC | GK RP', {type: 'PLAYING'});
-  bot.user.setStatus('dnd');
+  setInterval(() => {
+    targetGuild = bot.guilds.get('813726879860391956')
+    if(targetGuild) {
+        bot.user.setPresence({ game: { name: targetGuild.memberCount + 'Members', type: 'WATCHING' }, status: 'online'  })
+              .then(console.log)
+              .catch(console.error);
+    }
+}, 1000 * 60 * 5);
 
 });
 
